@@ -5,19 +5,19 @@
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="sexo" id="todos" value="Masculino">
                 <label class="form-check-label" for="todos">
-                  Todos(5)
+                  Todos({{obtenerTotalEmpleados()}})
                 </label>
               </div>
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="sexo" id="Femenino"  >
                 <label class="form-check-label" for="Femenino">
-                  Femenino(3)
+                  Femenino({{obtenerTotalFemeninos()}})
                 </label>
               </div>
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="sexo" id="Masculino"  >
                 <label class="form-check-label" for="Masculino">
-                  Masculino(2)
+                  Masculino({{obtenerTotalMasculinos()}})
                 </label>
               </div>
 
@@ -29,7 +29,26 @@
     </div>
     <div class="card mt-3">
         <div class="card-body">
-          Tabla
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Legajo</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">Salario</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let empleado of listEmpleados">
+                <td>{{empleado.legajo}}</td>
+                <td>{{empleado.nombre}}</td>
+                <td>{{empleado.apellido}}</td>
+                <td>{{empleado.sexo}}</td>
+                <td>{{empleado.salario | currency}}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
     </div>
 </div>
