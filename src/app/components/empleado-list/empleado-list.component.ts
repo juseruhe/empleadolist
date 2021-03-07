@@ -18,6 +18,7 @@ export class EmpleadoListComponent implements OnInit {
 
   ];
 
+  radioButtonSeleccionado = "Todos";
 
 
   constructor() { }
